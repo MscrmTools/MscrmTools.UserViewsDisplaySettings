@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>MscrmTools.UserViewsDisplaySettings</id>
+    <version>1.2022.4.1</version>
+    <title>User Views Display Settings for XrmToolBox</title>
+    <authors>MscrmTools</authors>
+    <owners>MscrmTools</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/MscrmTools/MscrmTools.UserViewsDisplaySettings</projectUrl>
+    <iconUrl>https://github.com/MscrmTools/MscrmTools.UserViewsDisplaySettings/blob/main/MscrmTools.UserViewsDisplaySettings/MscrmTools.UserViewsDisplaySettings/Resources/UVDS_80.png?raw=true</iconUrl>
+    <description>An XrmToolBox tool to apply views display settings to multiple users</description>
+    <summary>An XrmToolBox tool to apply views display settings to multiple users</summary>
+    <releaseNotes>Initial release</releaseNotes>
+    <tags>XrmToolBox Views User</tags>
+    <dependencies>
+      <dependency id="XrmToolBox" version="1.2021.12.53" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\MscrmTools.UserViewsDisplaySettings.dll" target="lib\net452\Plugins" />
+  </files>
+</package>

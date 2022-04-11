@@ -239,6 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="MscrmTools.UserViewsDisplaySettings.nuspec" />
     <None Include="packages.config" />
     <None Include="Resources\UVDS.pdn" />
   </ItemGroup>
