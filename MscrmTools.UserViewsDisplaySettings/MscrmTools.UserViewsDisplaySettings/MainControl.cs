@@ -91,7 +91,7 @@ namespace MscrmTools.UserViewsDisplaySettings
 
             WorkAsync(new WorkAsyncInfo
             {
-                Message = "Loading views...",
+                Message = "Updating user(s)...",
                 IsCancelable = true,
                 Work = (bw, evt) =>
                 {
@@ -343,14 +343,6 @@ namespace MscrmTools.UserViewsDisplaySettings
             }
         }
 
-        private void toolStripMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            var messageBusEventArgs = new MessageBusEventArgs("FetchXML Builder");
-            var fetchXml = (((ComboBox)userSelector1.Controls.Find("cbbViews", true)?[0]).SelectedItem as ViewItem)?.FetchXml;
-            messageBusEventArgs.TargetArgument = fetchXml ?? ACTIVE_USERS_FETCH;
-            OnOutgoingMessage(this, messageBusEventArgs);
-        }
-
         private void tsbApplyToSelectedUser_Click(object sender, EventArgs e)
         {
             var user = userSelector1.SelectedItem;
@@ -382,6 +374,14 @@ namespace MscrmTools.UserViewsDisplaySettings
             CloseTool();
         }
 
+        private void TsbSelectWithFxb_Click(object sender, System.EventArgs e)
+        {
+            var messageBusEventArgs = new MessageBusEventArgs("FetchXML Builder");
+            var fetchXml = (((ComboBox)userSelector1.Controls.Find("cbbViews", true)?[0]).SelectedItem as ViewItem)?.FetchXml;
+            messageBusEventArgs.TargetArgument = fetchXml ?? ACTIVE_USERS_FETCH;
+            OnOutgoingMessage(this, messageBusEventArgs);
+        }
+
         private void UserSelector1_OnSingleUserSelected(object sender, AppCode.Args.UserEventArgs e)
         {
             _personalizationSettings = new Dictionary<int, ViewPersonalizationSettings>();
@@ -393,7 +393,7 @@ namespace MscrmTools.UserViewsDisplaySettings
 
             if (cbbTables.SelectedItem != null && _personalizationSettings.Any(p => p.Key == ((EntityInfo)cbbTables.SelectedItem).ObjectTypeCode))
             {
-                if (DialogResult.Yes == MessageBox.Show(this, "Do you want to apply current user UI settings?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                if (DialogResult.Yes == MessageBox.Show(this, "Do you want to display current user UI settings?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     cbbTables_SelectedIndexChanged(cbbTables, new EventArgs());
                 }

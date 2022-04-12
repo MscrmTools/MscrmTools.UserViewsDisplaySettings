@@ -89,7 +89,6 @@
             this.toolStripMenu.Size = new System.Drawing.Size(1569, 34);
             this.toolStripMenu.TabIndex = 4;
             this.toolStripMenu.Text = "tsMain";
-            this.toolStripMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStripMenu_ItemClicked);
             // 
             // tsbApplyToUsers
             // 
@@ -358,6 +357,8 @@
             this.tsbSelectWithFxb.Size = new System.Drawing.Size(164, 29);
             this.tsbSelectWithFxb.Text = "FetchXml Builder";
             this.tsbSelectWithFxb.ToolTipText = "Select users with FetchXml Builder";
+            this.tsbSelectWithFxb.Click += TsbSelectWithFxb_Click;
+
             // 
             // tsbApplyToSelectedUser
             // 
@@ -408,6 +409,8 @@
             this.PerformLayout();
 
         }
+
+     
 
         #endregion
         private System.Windows.Forms.ToolStrip toolStripMenu;

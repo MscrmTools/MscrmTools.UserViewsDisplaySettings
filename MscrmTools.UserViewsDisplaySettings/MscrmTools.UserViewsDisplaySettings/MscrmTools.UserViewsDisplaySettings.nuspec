@@ -11,7 +11,10 @@
     <iconUrl>https://github.com/MscrmTools/MscrmTools.UserViewsDisplaySettings/blob/main/MscrmTools.UserViewsDisplaySettings/MscrmTools.UserViewsDisplaySettings/Resources/UVDS_80.png?raw=true</iconUrl>
     <description>An XrmToolBox tool to apply views display settings to multiple users</description>
     <summary>An XrmToolBox tool to apply views display settings to multiple users</summary>
-    <releaseNotes>Initial release</releaseNotes>
+    <releaseNotes>
+      Fixed issue where FetchXml Builder is opened when applying configuration to users
+      Fixed message when selecting a single user to understand configuration will be displayed but not applied
+    </releaseNotes>
     <tags>XrmToolBox Views User</tags>
     <dependencies>
       <dependency id="XrmToolBox" version="1.2021.12.53" />
